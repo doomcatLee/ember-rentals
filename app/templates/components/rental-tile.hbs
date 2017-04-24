@@ -1,11 +1,12 @@
 
 <li>
-  {{rental.owner}}'s {{rental.type}} in {{rental.city}}
+  <h3>{{rental.owner}}'s {{rental.type}} in {{rental.city}}</h3>
   {{#if isImageShowing }}
     <p><img src={{rental.image}} alt={{rental.type}} {{action 'imageHide'}}></p>
   {{else}}
-    <button {{action 'imageShow'}}>Show image</button>
+    <img src="{{rental.image}}" alt="" style="width:30%"/>
   {{/if}}
   {{update-rental rental=rental update="update"}}
-  <button {{action 'delete' rental}}>Delete</button>
+  <button class="btn btn-default" {{action 'delete' rental}}>Delete</button>
+
 </li>
